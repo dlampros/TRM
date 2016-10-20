@@ -21,22 +21,32 @@ public class xmlAntiParser extends AntiParser{
 
     public void createFile(Model model, File file, String taxpayer) {
         String afm = model.getAFM(taxpayer);
-        file = new File(file.toString() + "\\" + afm + "_RECEIPTS.txt");
-        
-        String head ="<?xml version=\"1.0\" encoding=\"UTF-8\"?/>\n\n" + "<Name " + taxpayer + "/>\n<AMF " +
-        				model.getAFM(taxpayer) + "/>\n<Income: " + model.getIncome(taxpayer) + "/>\n<Receipts/>";
         String[][] nodes = model.allReceipts(taxpayer);
+        
+        file = new File(file.toString() + "\\" + afm + "_RECEIPTS.xml");
+        String head ="<?xml version=\"1.0\" encoding=\"UTF-8\"?/>\n\n" + 
+        				"<Name " + taxpayer + "/>\n" + 
+        				"<AMF " + model.getAFM(taxpayer) + "/>\n" + 
+        				"<Income: " + model.getIncome(taxpayer) + "/>\n" + 
+        				"<Receipts />\n";
         
         try {
             FileWriter fwr = new FileWriter(file);
             fwr.write(head);
-
+            
+            String wr;
             for(int i=0; i<model.getReceiptsSize(taxpayer); i++) {
-                String wr = "\n<Receipt ID " + nodes[i][0] + "/>\n<Company " + nodes[i][1] + "/>\n<CompanyOwer " + nodes[i][2] +
-                            "/>\n<CompanyOwnerAFM " + nodes[i][3] + "/>\n<CompanyAddress " + nodes[i][4] + "/>\n<Category " + 
-                            nodes[i][5] + "/>\n<Amount " + nodes[i][6] + "/>";
+                wr = "<Receipt ID " + nodes[i][0] + "/>\n" + 
+                		"<Company " + nodes[i][1] + "/>\n" + 
+                		"<CompanyOwer " + nodes[i][2] + "/>\n" + 
+                		"<CompanyOwnerAFM " + nodes[i][3] + "/>\n" + 
+                		"<CompanyAddress " + nodes[i][4] + "/>\n" + 
+                		"<Category " + nodes[i][5] + "/>\n" + 
+                		"<Amount " + nodes[i][6] + "/>\n";
+                
                 fwr.write(wr);
             }
+            
             fwr.flush();
             fwr.close();
         }

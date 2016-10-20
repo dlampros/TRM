@@ -145,6 +145,7 @@ public class topPanel extends javax.swing.JPanel {
         nameOut.setText(taxpayer);
         VATOut.setText(afm);
         incomeOut.setText(income);
+        
         DefaultTableModel model = new DefaultTableModel(data, col);
         JTable tabl = new JTable(model);
         tabl.setEnabled(false);
@@ -153,7 +154,6 @@ public class topPanel extends javax.swing.JPanel {
         here.add(tabl);
         here.setViewportView(tabl);
     }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField VATOut;
@@ -167,5 +167,4 @@ public class topPanel extends javax.swing.JPanel {
     private javax.swing.JTextField nameOut;
     private javax.swing.JPanel topPanel;
     // End of variables declaration//GEN-END:variables
-
 }

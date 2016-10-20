@@ -20,6 +20,7 @@ public class CompanyOwner {
     public String getName() {
         return name;
     }
+    
     public String getVAT() {
         return vat;
     }

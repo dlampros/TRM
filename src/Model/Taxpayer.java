@@ -11,8 +11,7 @@ import java.util.List;
 
 public class Taxpayer {
     private List<Receipt> receipts = new ArrayList<>();
-    private String name;
-    private String vat;
+    private String name, vat;
     private int income;
 
     public Taxpayer(String n, String afm, int inc) {
@@ -66,7 +65,7 @@ public class Taxpayer {
 */
 
     public void addReceipt(String rID, String rCateg, int rAmount, Company company) {
-            receipts.add(new Receipt(rID, rCateg, company, rAmount));
+    	receipts.add(new Receipt(rID, rCateg, company, rAmount));
     }
 
     public String[][] getReceipt(){
@@ -89,9 +88,8 @@ public class Taxpayer {
     public double getReceiptAmount() {
         double amounts = 0;
         
-        for(int i=0; i<receipts.size(); i++) {
+        for(int i=0; i<receipts.size(); i++)
             amounts += receipts.get(i).getReceiptAmount();
-        }
 
         return amounts;
     }
@@ -100,9 +98,8 @@ public class Taxpayer {
         double amounts = 0;
         
         for(int i=0; i<receipts.size(); i++) {
-            if(category.matches(receipts.get(i).getReceiptCategory())) {
+            if(category.matches(receipts.get(i).getReceiptCategory()))
                 amounts += receipts.get(i).getReceiptAmount();
-            }
         }
 
         return amounts;
@@ -110,18 +107,15 @@ public class Taxpayer {
 
     public String[] getReceiptsID() {
         int size = receipts.size();
-        if(receipts.isEmpty()) {
+        if(receipts.isEmpty())
             size = 1;
-        }
         
         String[] IDs = new String[size];
-        if(receipts.isEmpty()) {
+        if(receipts.isEmpty())
             IDs[0] = "";
-        }
         
-        for(int i=0; i<receipts.size(); i++) {
+        for(int i=0; i<receipts.size(); i++)
             IDs[i] = receipts.get(i).getReceiptID();
-        }
         
         return IDs;
     }
@@ -146,7 +140,7 @@ public class Taxpayer {
         return c;
     }
 
-    public int getNumOfReceiptsWithSameCompany(Company company){
+    public int getNumOfReceiptsWithSameCompany(Company company) {
         int num = 0;
         for(int i=0; i<receipts.size(); i++) {
             if(company.getName().matches(receipts.get(i).getCompanyName()) && company.getAddress().matches(receipts.get(i).getCompanyAddr())) {

@@ -24,17 +24,26 @@ public class textReference extends References {
         String afm = model.getAFM(taxpayer);
         file = new File(file.toString()+"\\" + afm + "_LOG.txt");
 
-        String head = "Name: " + taxpayer + "\nAMF: " + model.getAFM(taxpayer) + "\nIncome: " + model.getIncome(taxpayer);
+        String head = "Name: " + taxpayer + "\n" + 
+        				"AMF: " + model.getAFM(taxpayer) + "\n" + 
+        				"Income: " + model.getIncome(taxpayer) + "\n";
 
         try {
             FileWriter fwr = new FileWriter(file);
             fwr.write(head);
 
-            String wr = "\nTotalRequiredReceipts: " + req + "\nTotalReceiptsGathred: " + gath +
-            			"\nAdditionalTaxReduction: " + reduc + "\nAdditionalTaxPenalty: " + penal +
-            			"\nCategory1: " + perCateg[0] + "\nCategory2: " + perCateg[1] + "\nCategory3: " + perCateg[2] +
-            			"\nCategory4: " + perCateg[3] + "\nCategory5: " + perCateg[4] + 
-                        "\nCategory6: " + perCateg[5] + "\nCategory7: " + perCateg[6];
+            String wr = "TotalRequiredReceipts: " + req + "\n" + 
+            			"TotalReceiptsGathred: " + gath + "\n" + 
+            			"AdditionalTaxReduction: " + reduc + "\n" + 
+            			"AdditionalTaxPenalty: " + penal + "\n" + 
+            			"Category1: " + perCateg[0] + "\n" + 
+            			"Category2: " + perCateg[1] + "\n" + 
+            			"Category3: " + perCateg[2] + "\n" + 
+            			"Category4: " + perCateg[3] + "\n" + 
+            			"Category5: " + perCateg[4] + "\n" + 
+            			"Category6: " + perCateg[5] + "\n" + 
+            			"\nCategory7: " + perCateg[6] + "\n";
+            
             fwr.write(wr);
             fwr.flush();
             fwr.close();

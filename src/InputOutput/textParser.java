@@ -14,13 +14,14 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class textParser extends Parser{
+
+public class textParser extends Parser {
     private String setLine;
     private String Name, AFM, ReceiptID, Company, CompanyOwner;
     private String CompanyOwnerAFM, CompanyAddress, Category;
     private int Income, Amount, CompanyOwnerComps;
 
-    public textParser(){
+    public textParser() {
         super();
     }
     
@@ -45,7 +46,6 @@ public class textParser extends Parser{
                     Logger.getLogger(textParser.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-
         }
         catch (FileNotFoundException ex) {
             Logger.getLogger(textParser.class.getName()).log(Level.SEVERE, null, ex);

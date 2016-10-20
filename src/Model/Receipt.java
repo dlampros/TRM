@@ -5,56 +5,53 @@
 
 package Model;
 
-/**
- *
- * @author kliker
- */
+
 public class Receipt {
     private Company company;
-    private String id;
-    private String category;
+    private String id, category;
     private double amount;
 
-    public Receipt(String rID,String rCateg,Company cn,int rAmount){
+    public Receipt(String rID, String rCateg, Company cn, int rAmount) {
         id = rID;
         category = rCateg;
         amount = rAmount;
         company = cn;
     }
 
-    public String getReceiptID(){
+    public String getReceiptID() {
         return id;
     }
 
-    public String getCompanyName(){
+    public String getCompanyName() {
         return company.getName();
     }
 
-    public Company getCompany(){
+    public Company getCompany() {
         return company;
     }
 
-    public String getCompanyOwnerName(){
+    public String getCompanyOwnerName() {
         return company.getCompanyOwnerNm();
     }
 
-    public CompanyOwner getOwner(){
+    public CompanyOwner getOwner() {
         return company.getCompanyOwner();
     }
 
-    public String getCompanyOwnerAFM(){
+    public String getCompanyOwnerAFM() {
         return company.getOwnerAFM();
     }
 
-    public String getCompanyAddr(){
+    public String getCompanyAddr() {
         return company.getAddress();
     }
 
-    public String getReceiptCategory(){
+    public String getReceiptCategory() {
         return category;
     }
 
-    public double getReceiptAmount(){
+    public double getReceiptAmount() {
         return amount;
     }
+    
 }

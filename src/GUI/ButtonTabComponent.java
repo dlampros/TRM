@@ -27,7 +27,6 @@ import javax.swing.plaf.basic.BasicButtonUI;
 
 
 public class ButtonTabComponent extends JPanel {
-
 	private static final long serialVersionUID = 1L;
 	private final JTabbedPane tabs;
 
@@ -43,13 +42,10 @@ public class ButtonTabComponent extends JPanel {
         //make JLabel read titles from JTabbedPane
         JLabel label = new JLabel() {
 			private static final long serialVersionUID = 1L;
-
 			@Override
             public String getText() {
                 int i = pane.indexOfTabComponent(ButtonTabComponent.this);
-                if (i != -1) {
-                    return pane.getTitleAt(i);
-                }
+                if (i != -1) return pane.getTitleAt(i);
                 return null;
             }
         };
@@ -89,9 +85,8 @@ public class ButtonTabComponent extends JPanel {
 
         public void actionPerformed(ActionEvent e) {
             int i = tabs.indexOfTabComponent(ButtonTabComponent.this);
-            if (i != -1) {
+            if (i != -1)
                 tabs.remove(i);
-            }
         }
 
         //paint the cross
@@ -136,4 +131,5 @@ public class ButtonTabComponent extends JPanel {
             }
         }
     };
+    
 }
