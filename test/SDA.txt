@@ -1,0 +1,42 @@
+Name: Periklis Portas
+AFM: 123231240
+Income: 25000
+
+Receipts:
+Receipt ID: 1
+Company: Everest
+CompanyOwner: Stathis Turopitas
+CompanyOwnerAFM: 908787865
+CompanyAddress: Dodoni 3
+Category: 3
+Amount: 100
+Receipt ID: 2
+Company: Cool and Wolf
+CompanyOwner: Mpampis Metaksenios
+CompanyOwnerAFM: 123443256
+CompanyOwnerComps: 12
+CompanyAddress: Mihail Aggelou 46
+Category: 4
+Amount: 534
+
+
+Name: Giorgos Lampas
+AFM: 896745321
+Income: 34000
+
+Receipts:
+Receipt ID: 3
+Company: Everest
+CompanyOwner: Stathis Turopitas
+CompanyOwnerAFM: 908787865
+CompanyAddress: Dodoni 3
+Category: 1
+Amount: 235
+Receipt ID: 4
+Company: Psistaria
+CompanyOwner: Vaggelis Gardoumpas
+CompanyOwnerAFM: 782354128
+CompanyOwnerComps: 1
+CompanyAddress:  Vilara 6
+Category: 2
+Amount: 2560
